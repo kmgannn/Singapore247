@@ -134,22 +134,40 @@ void ft_rev_int(int *tab, int size)
     // }
 }
 
+// void ft_sort_int(int *tab, int size)
+// {
+//     int i = 0;
+//     int first = str[i];       <-- 1. 'str' doesn't exist here (the parameter is 'tab'). 
+// 
+//     while (i < size)          <-- 2. If 'i' reaches the last room (size - 1), then doing tab[i + 1] inside will look in a room that doesn't exist!
+//     {
+//         if (str[i+1] < first) <-- 3. Why compare against 'first'? In bubble sort, we want to compare neighbor against neighbor: is tab[i+1] smaller than tab[i]?
+//         {
+//             str[i+1] = temp;  <-- 4. 'temp' has not been created yet! Also, look at the order of your swap below:
+//             str[i] = str[i+1];
+//             temp = str[i];
+//         }
+//         i++;
+//     }
+// }
+
 void ft_sort_int(int *tab, int size)
 {
-    int i = 0;
-    while (i < size)
+    int turn = 0;
+    while (turn < size)
     {
-        int front;
-        int back;
-        
-        //front checker
-        int temp_front = int front;
-
-        //rear checker
-        int temp_back = ;
-        
-        i++;
-
+        int i = 0;
+        while (i < size-1)
+        {
+            if (tab[i+1] < tab[i])
+            {
+                int temp = tab[i];
+                tab[i] = tab[i+1];
+                tab[i+1] = temp;
+            }
+            i++;
+        }
+        turn++;
     }
 }
 
